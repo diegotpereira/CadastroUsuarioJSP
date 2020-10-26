@@ -39,7 +39,7 @@ public class UsuarioDAO {
 		return connection;
 	}
 	
-	public void inserirUsuario () {}
+	public void inserirUsuario (Usuario usuario) {}
 	
 	public Usuario selecionarUsuario() {
 		
@@ -51,7 +51,7 @@ public class UsuarioDAO {
 		List<Usuario> usuarios = new ArrayList<>();
 		return usuarios;}
 	
-	public boolean deletarUsuarios(int id) {
+	public boolean deletarUsuario(int id) {
 		
 		boolean linhaDeletada = false;
 		return linhaDeletada;}
@@ -75,6 +75,11 @@ public class UsuarioDAO {
 				}
 			}
 		}
+	}
+
+	public Usuario selecionarUsuario(int id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

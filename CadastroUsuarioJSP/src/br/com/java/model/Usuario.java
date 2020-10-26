@@ -8,6 +8,12 @@ public class Usuario {
 	protected int telefone;
 	
 	
+	public Usuario(String nome, String email, int telefone, String nacionalidade) {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Usuario(int id, String nome, String email, int telefone, String nacionalidade) {}
+	
 	public int getId() {
 		return id;
 	}
