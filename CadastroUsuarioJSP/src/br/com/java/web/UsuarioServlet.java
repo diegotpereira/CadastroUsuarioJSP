@@ -41,7 +41,7 @@ public class UsuarioServlet extends HttpServlet {
 			case "/inserir":
 				inserirUsuario(request, response);
 				break;
-			case "/excluir":
+			case "/deletar":
 				deletarUsuario(request, response);
 				break;
 			case "/editar":
@@ -96,7 +96,7 @@ public class UsuarioServlet extends HttpServlet {
 	private void atualizarUsuario(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
 		// TODO Auto-generated method stub
 		int id = Integer.parseInt(request.getParameter("id"));
-		String nome = request.getParameter("name");
+		String nome = request.getParameter("nome");
 		String email = request.getParameter("email");
 		int telefone = Integer.parseInt (request.getParameter("telefone"));
 		String nacionalidade = request.getParameter("nacionalidade");
