@@ -70,7 +70,7 @@ public class UsuarioDAO {
 		
 		while (rs.next()) {
 			
-			String name = rs.getString("name");
+			String name = rs.getString("nome");
 			String email = rs.getString("email");
 			int telefone = rs.getInt("telefone");
 			String nacionalidade = rs.getString("nacionalidade");
