@@ -19,7 +19,7 @@
 			</div>
 
 			<ul class="navbar-nav">
-				<li><a href="<%=request.getContextPath()%>/listar"
+				<li><a href="<%=request.getContextPath()%>/lista"
 					class="nav-link">Usuarios</a></li>
 			</ul>
 		</nav>

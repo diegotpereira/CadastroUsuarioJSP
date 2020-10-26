@@ -16,7 +16,7 @@ public class UsuarioDAO {
 	private String jdbcUsername = "root";
 	private String jdbcPassword = "root";
 
-	private static final String INSERIR_USUARIO_SQL = "INSERT INTO usuarios" + "  (name, email, telefone, country) VALUES " + " (?, ?, ?, ?);";
+	private static final String INSERIR_USUARIO_SQL = "INSERT INTO usuarios" + "  (nome, email, telefone, nacionalidade) VALUES " + " (?, ?, ?, ?);";
 	private static final String SELECIONE_USUARIO_POR_ID = "select id, nome, email, telefone, nacionalidade from usuarios where id =?";
 	private static final String SELECIONE_TODOS_USUARIO = "select * from usuarios";
 	private static final String DELETAR_USUARIO_SQL = "delete from usuarios where id = ?;";

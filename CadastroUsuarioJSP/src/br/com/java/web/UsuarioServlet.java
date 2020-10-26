@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.java.model.Usuario;
 import br.com.java.model.dao.UsuarioDAO;
 
+@WebServlet("/")
 public class UsuarioServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
@@ -36,7 +38,7 @@ public class UsuarioServlet extends HttpServlet {
 			case "/novo":
 				mostrarNovoForm(request, response);
 				break;
-			case "/adcionar":
+			case "/inserir":
 				inserirUsuario(request, response);
 				break;
 			case "/excluir":
@@ -72,14 +74,14 @@ public class UsuarioServlet extends HttpServlet {
 		String nacionalidade = request.getParameter("nacionalidade");
 		Usuario novoUsuario = new Usuario(nome, email, telefone, nacionalidade);
 		dao.inserirUsuario(novoUsuario);
-		response.sendRedirect("listar");
+		response.sendRedirect("lista");
 	}
 
 	private void deletarUsuario(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
 		// TODO Auto-generated method stub
 		int id = Integer.parseInt(request.getParameter("id"));
 		dao.deletarUsuario(id);
-		response.sendRedirect("listar");
+		response.sendRedirect("lista");
 	}
 
 	private void mostrarEditForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -101,7 +103,7 @@ public class UsuarioServlet extends HttpServlet {
 
 		Usuario book = new Usuario(id, nome, email, telefone, nacionalidade);
 		dao.atualizarUsuario(book);
-		response.sendRedirect("listar");
+		response.sendRedirect("lista");
 		
 	}
 
