@@ -18,6 +18,10 @@ public class UsuarioServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UsuarioDAO dao;
 	
+	public void init() {
+		dao = new UsuarioDAO();
+	}
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doGet(request, response);
@@ -97,7 +101,7 @@ public class UsuarioServlet extends HttpServlet {
 
 		Usuario book = new Usuario(id, nome, email, telefone, nacionalidade);
 		dao.atualizarUsuario(book);
-		response.sendRedirect("list");
+		response.sendRedirect("listar");
 		
 	}
 

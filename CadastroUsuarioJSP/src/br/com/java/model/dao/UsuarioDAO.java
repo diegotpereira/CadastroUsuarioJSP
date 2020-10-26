@@ -91,6 +91,7 @@ public class UsuarioDAO {
 	public List<Usuario> selecionarTodosUsuarios(){
 		
 		List<Usuario> usuarios = new ArrayList<>();
+		
 		try (Connection connection = getConnection();
 
 				// Step 2:Create a statement using connection object
