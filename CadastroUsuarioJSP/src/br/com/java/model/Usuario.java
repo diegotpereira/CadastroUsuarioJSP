@@ -6,13 +6,26 @@ public class Usuario {
 	protected String nome;
 	protected String email;
 	protected int telefone;
+	protected String nacionalidade;
 	
 	
 	public Usuario(String nome, String email, int telefone, String nacionalidade) {
 		// TODO Auto-generated constructor stub
+		super();
+		this.nome = nome;
+		this.email = email;
+		this.telefone = telefone;
+		this.nacionalidade = nacionalidade;
 	}
 	
-	public Usuario(int id, String nome, String email, int telefone, String nacionalidade) {}
+	public Usuario(int id, String nome, String email, int telefone, String nacionalidade) {
+		
+		this.id = id;
+		this.nome = nome;
+		this.email = email;
+		this.telefone = telefone;
+		this.nacionalidade = nacionalidade;
+	}
 	
 	public int getId() {
 		return id;
@@ -44,6 +57,6 @@ public class Usuario {
 	public void setNacionalidade(String nacionalidade) {
 		this.nacionalidade = nacionalidade;
 	}
-	protected String nacionalidade;
+	
 
 }
