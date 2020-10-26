@@ -31,10 +31,10 @@ public class UsuarioDAO {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		return connection;
@@ -43,7 +43,7 @@ public class UsuarioDAO {
 	public void inserirUsuario (Usuario usuario) {
 		
 		System.out.println(INSERIR_USUARIO_SQL);
-		// try-with-resource statement will auto close the connection.
+		
 		try (Connection connection = getConnection();
 				PreparedStatement preparedStatement = connection.prepareStatement(INSERIR_USUARIO_SQL)) {
 			preparedStatement.setString(1, usuario.getNome());
@@ -61,14 +61,13 @@ public class UsuarioDAO {
 		
 		Usuario usuario= null;
 		try (Connection connection = getConnection();
-		// Step 2:Create a statement using connection object
+		
 		PreparedStatement preparedStatement = connection.prepareStatement(SELECIONE_USUARIO_POR_ID);) {
 		preparedStatement.setInt(1, id);
 		System.out.println(preparedStatement);
-		// Step 3: Execute the query or update query
 		ResultSet rs = preparedStatement.executeQuery();
 
-		// Step 4: Process the ResultSet object.
+		
 		while (rs.next()) {
 			
 			String name = rs.getString("name");
@@ -94,16 +93,14 @@ public class UsuarioDAO {
 		
 		try (Connection connection = getConnection();
 
-				// Step 2:Create a statement using connection object
 			PreparedStatement preparedStatement = connection.prepareStatement(SELECIONE_TODOS_USUARIO);) {
 			System.out.println(preparedStatement);
-			// Step 3: Execute the query or update query
 			ResultSet rs = preparedStatement.executeQuery();
 
-			// Step 4: Process the ResultSet object.
+			
 			while (rs.next()) {
 				int id = rs.getInt("id");
-				String nome = rs.getString("name");
+				String nome = rs.getString("nome");
 				String email = rs.getString("email");
 				int telefone = rs.getInt("telefone");
 				String nacionalidade = rs.getString("nacionalidade");
