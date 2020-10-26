@@ -2,6 +2,7 @@ package br.com.java.web;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -44,7 +45,7 @@ public class UsuarioServlet extends HttpServlet {
 				atualizarUsuario(request, response);
 				break;
 			default:
-				listarUser(request, response);
+				listarUsuario(request, response);
 				break;
 			}
 		} catch (SQLException ex) {
@@ -100,9 +101,12 @@ public class UsuarioServlet extends HttpServlet {
 		
 	}
 
-	private void listarUser(HttpServletRequest request, HttpServletResponse response) {
+	private void listarUsuario(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		List<Usuario> listarUsuario = dao.selecionarTodosUsuarios();
+		request.setAttribute("listarUsuario", listarUsuario);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("usuario-lista.jsp");
+		dispatcher.forward(request, response);
 	}
 
 }
