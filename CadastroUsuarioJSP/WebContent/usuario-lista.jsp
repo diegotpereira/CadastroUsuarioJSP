@@ -15,13 +15,12 @@
 		<nav class="navbar navbar-expand-md navbar-dark"
 			style="background-color: tomato">
 			<div>
-				<a href="https://www.javaguides.net" class="navbar-brand"> User
-					Management App </a>
+				<a href="https://github.com/diegotpereira" class="navbar-brand"> App de gerenciamento de usuários </a>
 			</div>
 
 			<ul class="navbar-nav">
 				<li><a href="<%=request.getContextPath()%>/lista"
-					class="nav-link">Users</a></li>
+					class="nav-link">Usuários</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -31,23 +30,22 @@
 		<!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
 
 		<div class="container">
-			<h3 class="text-center">List of Users</h3>
+			<h3 class="text-center">Lista de Usuários</h3>
 			<hr>
 			<div class="container text-left">
 
-				<a href="<%=request.getContextPath()%>/novo" class="btn btn-success">Add
-					New User</a>
+				<a href="<%=request.getContextPath()%>/novo" class="btn btn-success">Adicionar Novo Usuário</a>
 			</div>
 			<br>
 			<table class="table table-bordered">
 				<thead>
 					<tr>
 						<th>ID</th>
-						<th>Name</th>
+						<th>Nome</th>
 						<th>Email</th>
 						<th>Telefone</th>
 						<th>Nacionalidade</th>
-						<th>Actions</th>
+						<th>Ação</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -56,13 +54,13 @@
 
 						<tr>
 							<td><c:out value="${usuario.id}" /></td>
-							<td><c:out value="${usuario.name}" /></td>
+							<td><c:out value="${usuario.nome}" /></td>
 							<td><c:out value="${usuario.email}" /></td>
 							<td><c:out value="${usuario.telefone}" /></td>
 							<td><c:out value="${usuario.nacionalidade}" /></td>
-							<td><a href="editar?id=<c:out value='${usuario.id}' />">Edit</a>
+							<td><a href="editar?id=<c:out value='${usuario.id}' />">Editar</a>
 								&nbsp;&nbsp;&nbsp;&nbsp; <a
-								href="deletar?id=<c:out value='${usuario.id}' />">Delete</a></td>
+								href="deletar?id=<c:out value='${usuario.id}' />">Deletar</a></td>
 						</tr>
 					</c:forEach>
 					<!-- } -->

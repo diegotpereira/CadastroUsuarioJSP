@@ -15,12 +15,12 @@
 		<nav class="navbar navbar-expand-md navbar-dark"
 			style="background-color: tomato">
 			<div>
-				<a href="https://www.javaguides.net" class="navbar-brand"> User Management App </a>
+				<a href="https://github.com/diegotpereira" class="navbar-brand"> App de gerenciamento de usuários </a>
 			</div>
 
 			<ul class="navbar-nav">
 				<li><a href="<%=request.getContextPath()%>/lista"
-					class="nav-link">Usuarios</a></li>
+					class="nav-link">Usuários</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -74,7 +74,7 @@
 						name="nacionalidade">
 				</fieldset>
 
-				<button type="submit" class="btn btn-success">Save</button>
+				<button type="submit" class="btn btn-success">Salvar</button>
 				</form>
 			</div>
 		</div>
